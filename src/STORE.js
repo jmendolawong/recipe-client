@@ -1,13 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-
-import './index.css';
-
-import App from './App';
-import store from './STORE'
-
-const RECIPES = [
+export default [
   {
     "id": "1", "name": "Recipe 1", "Ingredients": ["apple", "pear", "banana"],
     "Instructions": ["Step 1", "Step 2", "Step 3"]
@@ -29,10 +20,3 @@ const RECIPES = [
     "Instructions": ["Step 5.1", "Step 5.2", "Step 5.3"]
   },
 ]
-
-ReactDOM.render(
-  <BrowserRouter>
-    <App recipes={store} />
-  </BrowserRouter>,
-  document.getElementById('root')
-);
