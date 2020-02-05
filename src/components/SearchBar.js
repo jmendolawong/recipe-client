@@ -5,7 +5,7 @@ export default function SearchBar() {
     <form className="search-form">
       <div>
         <label htmlFor="search-bar">
-          <h2>Search for your next recipe</h2>
+          <h3>Search for your next recipe</h3>
         </label>
         <input placeholder="Chicken Parm" type="text" name="search-bar" id="search-bar" />
       </div>

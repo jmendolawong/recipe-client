@@ -48,7 +48,7 @@ export default class App extends Component {
           </Switch>
 
         </main>
-        <footer className='footer'>Placeholder</footer>
+        <footer className='footer'>Footer Placeholder</footer>
       </div>
     );
   }

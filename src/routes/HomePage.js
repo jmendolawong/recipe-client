@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import SearchBar from '../components/SearchBar';
 import Registration from '../components/Registration';
 
+import './HomePage.css'
+
 export default class HomePage extends Component {
   render() {
     return (
@@ -9,13 +11,15 @@ export default class HomePage extends Component {
 
         <div className="description">
           <header>
-            <h3>RSC Logo </h3>
+            <h2>RSC Logo </h2>
           </header>
           <p>Search for recipes, save your favorites, adjust serving sizes, make custom tweaks. Cooking is already difficult. Why not make it easier?</p>
         </div>
 
         <div className="explore">
-          <h3>E X P L O R E</h3>
+          <header>
+            <h2>E X P L O R E</h2>
+          </header>
           <SearchBar />
         </div>
 

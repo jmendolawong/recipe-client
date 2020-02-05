@@ -5,53 +5,33 @@
 body {
   font-family: "Open Sans",
   sans-serif;
-  font-size: 20px;
+  font-size: 14px;
   color: #444;
   text-align: center;
   line-height: 1.5;
 }
 
-nav,
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
 header {
-  padding: 45px 15px;
+  padding: 15px ;
 }
 
-section {
+.description, .registration {
   min-height: 200px;
   padding: 30px 15px;
-  background-color: #bbb;
+  background-color: #ccc;
 }
 
-section:nth-child(even) {
+.explore {
+  min-height: 200px;
   background-color: #ddd;
 }
 
 p {
+  font-size: 14px;
   margin: 0 auto;
   max-width: 650px;
 }
 
 p + p {
   margin-top: 15px;
-}
-
-.inputs {
-  padding: 5px;
-}
-
-button {
-  margin: 5px;
 }

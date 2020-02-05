@@ -1,0 +1,18 @@
+
+body {
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+.explore {
+  padding: 15px 15px
+}
+
+form.search-form {
+  padding: 15px
+}
