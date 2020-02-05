@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Note from './Note'
-import Ingredient from './Ingredient';
-import Instruction from './Instruction';
+import Note from '../components/Note'
+import Ingredient from '../components/Ingredient';
+import Instruction from '../components/Instruction';
 
-import store from './STORE';
+import store from '../STORE';
 
 function findRecipe(recipes = [], recipeId) {
   const recipe = recipes.find(recipe => recipe.id === recipeId)
@@ -14,19 +14,17 @@ function findRecipe(recipes = [], recipeId) {
 export default class Recipe extends Component {
   render() {
 
-    const recipeId = this.props.match.params
-    const { recipes = [] } = store
-
-    const thisRecipe = findRecipe(recipes, recipeId) || {}
+    const { recipeId } = this.props.match.params
+    const thisRecipe = findRecipe(store, recipeId)
 
     const ingredients = thisRecipe.ingredients
       .map((ingredient, key) =>
-        <Ingredient {...ingredient} key={key} />
+        <Ingredient ingredient={ingredient} key={key} />
       )
 
     const instructions = thisRecipe.instructions
       .map((step, key) =>
-        <Instruction {...step} key={key} />
+        <Instruction instruction={step} key={key} />
       )
 
     return (

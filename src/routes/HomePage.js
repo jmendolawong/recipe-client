@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SearchBar from './SearchBar';
-import Registration from './Registration';
+import SearchBar from '../components/SearchBar';
+import Registration from '../components/Registration';
 
 export default class HomePage extends Component {
   render() {

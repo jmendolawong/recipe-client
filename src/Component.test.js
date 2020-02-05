@@ -2,18 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import NavBar from './NavBar';
+import NavBar from './components/NavBar';
 
-import HomePage from './HomePage';
-import ExplorePage from './ExplorePage';
-import FavoritesList from './FavoritesPage';
-import NotFoundPage from './NotFoundPage';
+import HomePage from './routes/HomePage';
+import ExplorePage from './routes/ExplorePage';
+import FavoritesList from './routes/FavoritesPage';
+import Recipe from './routes/RecipePage';
+import NotFoundPage from './routes/NotFoundPage';
 
-import Recipe from './Recipe';
-
-import SearchBar from './SearchBar';
-import FavoriteItem from './FavoriteItem';
-import Registration from './Registration';
+import SearchBar from './components/SearchBar';
+import FavoriteItem from './components/FavoriteItem';
+import Registration from './components/Registration';
 
 const RECIPES = [
   {
@@ -99,7 +98,9 @@ describe('Components mount without crashing', () => {
   it('Recipe component', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <Recipe />, div
+      <BrowserRouter>
+        <Recipe match={{ params: { recipeId: "1" } }} />
+      </BrowserRouter>, div
     );
     ReactDOM.unmountComponentAtNode(div);
   });

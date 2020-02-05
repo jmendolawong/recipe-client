@@ -3,9 +3,9 @@ import React from 'react'
 export default function Note() {
   return (
     <div className='note'>
-      <textArea>
+      <textarea>
 
-      </textArea>
+      </textarea>
       <button type="submit">Save</button>
       <button type="submit">Delete Recipe</button>
     </div>
