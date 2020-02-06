@@ -34,12 +34,22 @@ export default class App extends Component {
     })
   }
 
+  componentDidMount() {
+    this.setState({
+      recipes: this.props.recipes
+    });
+    console.log(this.props.recipes)
+    console.log(this.state.recipes)
+    console.log(this.context.recipes)
+  }
+
   render() {
     const contextValue = {
       recipes: this.state.recipes,
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
     }
+    
     return (
       <RecipeContext.Provider value={contextValue}>
         <div className='App'>
@@ -63,15 +73,10 @@ export default class App extends Component {
                 component={ExplorePage} />
               <Route
                 path='/favorites'
-                render={() =>
-                  <FavoritesList recipes={this.props.recipes} />}
-              />
+                comoponent={FavoritesList} />
               <Route
                 path='/favorites/:recipeId'
-                render={routeProps =>
-                  <Recipe {...routeProps} />
-                }
-              />
+                component={Recipe} />
               <Route component={NotFound} />
             </Switch>
 

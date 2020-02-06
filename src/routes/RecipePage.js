@@ -4,7 +4,7 @@ import Note from '../components/Note'
 import Ingredient from '../components/Ingredient';
 import Instruction from '../components/Instruction';
 
-import store from '../STORE';
+// import store from '../STORE';
 
 function findRecipe(recipes = [], recipeId) {
   const recipe = recipes.find(recipe => recipe.id === recipeId)
@@ -14,8 +14,9 @@ function findRecipe(recipes = [], recipeId) {
 export default class Recipe extends Component {
   render() {
 
+    const { recipes } = this.context
     const { recipeId } = this.props.match.params
-    const thisRecipe = findRecipe(store, recipeId)
+    const thisRecipe = findRecipe(recipes, recipeId)
 
     const ingredients = thisRecipe.ingredients
       .map((ingredient, key) =>
