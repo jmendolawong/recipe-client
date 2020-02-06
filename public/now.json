@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "jmw-recipes-app",
+  "name": "recipes-app",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}

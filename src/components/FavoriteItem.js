@@ -6,14 +6,19 @@ export default class FavoriteItem extends Component {
     return (
       <div className='favoriteItem'>
         <li>
-          <Link to={`/recipes/${this.props.id}`}>
+          <Link to={`/favorites/${this.props.id}`}>
             <h2>{this.props.name}</h2>
           </Link>
           <button className='editRecipe'>
             Edit
             </button>
-          <button className='deleteRecipe'>
-            Delete
+          <button
+            className='deleteRecipe'
+            onClick={() => {
+              deleteRecipe()
+              this.props.history.push('/')
+            }}>
+            Delete Recipe
           </button>
 
         </li>
