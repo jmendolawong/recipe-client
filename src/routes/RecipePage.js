@@ -1,32 +1,44 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Note from '../components/Note'
-import Ingredient from '../components/Ingredient';
-import Instruction from '../components/Instruction';
+// import Ingredient from '../components/Ingredient'
+// import Instruction from '../components/Instruction'
+import RecipeContext from '../RecipeContext'
+import './RecipePage.css'
+import { deleteRecipe } from '../recipeHelper'
 
 // import store from '../STORE';
 
 function findRecipe(recipes = [], recipeId) {
-  const recipe = recipes.find(recipe => recipe.id === recipeId)
+  const recipe = recipes.find(recipe => recipe.id === parseInt(recipeId))
   return recipe
 }
 
+// Possibly need to take out the notes. 
+// Might be unnecessary and could just store the recipes from the API in the database
+
 export default class Recipe extends Component {
+  static contextType = RecipeContext
+
   render() {
     const { recipes } = this.context
-    const recipeId  = this.props.match.params.id
+    const recipeId = this.props.match.params.id
     const thisRecipe = findRecipe(recipes, recipeId)
-    console.log(recipeId)
-
 
     const ingredients = thisRecipe.ingredients
       .map((ingredient, key) =>
-        <Ingredient ingredient={ingredient} key={key} />
+        <li key={key}>
+          {ingredient}
+        </li>
+        // <Ingredient ingredient={ingredient} key={key} />
       )
 
     const instructions = thisRecipe.instructions
       .map((step, key) =>
-        <Instruction instruction={step} key={key} />
+        <li key={key}>
+          {step}
+        </li>
+        // <Instruction instruction={step} key={key} />
       )
 
     return (
@@ -52,6 +64,14 @@ export default class Recipe extends Component {
           <h2>Notes</h2>
           <Note />
         </div>
+        <button type="submit">Save</button>
+        <button
+          className='deleteRecipe'
+          onClick={() => {
+            deleteRecipe(this.props.id, this.context.deleteRecipe)
+          }}>
+          Delete Recipe
+        </button>
       </div >
     );
   }

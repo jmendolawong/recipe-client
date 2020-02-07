@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import RecipeContext from '../RecipeContext'
 import PropTypes from 'prop-types'
+import { deleteRecipe } from '../recipeHelper'
 
-function deleteRecipe(recipeId, callback) {
-
-}
+import './FavoriteItem.css'
 
 export default class FavoriteItem extends Component {
   static contextType = RecipeContext;

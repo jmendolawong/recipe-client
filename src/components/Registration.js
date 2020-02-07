@@ -5,7 +5,7 @@ export default class Registration extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    
+    console.log('Registration submitted')
   }
 
   render() {

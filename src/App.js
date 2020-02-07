@@ -38,9 +38,6 @@ export default class App extends Component {
     this.setState({
       recipes: this.props.recipes
     });
-    console.log(this.props.recipes)
-    console.log(this.state.recipes)
-    console.log(this.context.recipes)
   }
 
   render() {
@@ -74,7 +71,7 @@ export default class App extends Component {
                 path='/explore'
                 component={ExplorePage} />
               <Route
-                path='/favorites'
+                exact path='/favorites'
                 component={FavoritesList} />
               <Route
                 path='/favorites/:id'
