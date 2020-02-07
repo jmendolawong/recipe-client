@@ -13,10 +13,11 @@ function findRecipe(recipes = [], recipeId) {
 
 export default class Recipe extends Component {
   render() {
-
     const { recipes } = this.context
-    const { recipeId } = this.props.match.params
+    const recipeId  = this.props.match.params.id
     const thisRecipe = findRecipe(recipes, recipeId)
+    console.log(recipeId)
+
 
     const ingredients = thisRecipe.ingredients
       .map((ingredient, key) =>

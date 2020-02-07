@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 
 import HomePage from './routes/HomePage'
 import ExplorePage from './routes/ExplorePage'
@@ -49,7 +49,7 @@ export default class App extends Component {
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
     }
-    
+
     return (
       <RecipeContext.Provider value={contextValue}>
         <div className='App'>
@@ -59,7 +59,9 @@ export default class App extends Component {
           </nav>
 
           <header role="banner">
-            <h1>Recipe Sous-chef</h1>
+            <Link to='/'>
+              <h1>Recipe Sous-chef</h1>
+            </Link>
             <h2>Catalog your favorite recipes</h2>
           </header>
 
@@ -73,9 +75,9 @@ export default class App extends Component {
                 component={ExplorePage} />
               <Route
                 path='/favorites'
-                comoponent={FavoritesList} />
+                component={FavoritesList} />
               <Route
-                path='/favorites/:recipeId'
+                path='/favorites/:id'
                 component={Recipe} />
               <Route component={NotFound} />
             </Switch>

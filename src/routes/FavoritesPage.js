@@ -12,12 +12,12 @@ export default class FavoritesList extends Component {
     return (
       <div className='FavoriteList'>
         <ul className='favorite_list'>
-          {recipes.map((recipe, key) =>
-            <FavoriteItem {...recipe} key={key} />
+          {recipes.map(recipe =>
+            <FavoriteItem {...recipe} key={recipe.id} />
           )}
         </ul>
       </div>
-    )
+    );
   }
 }
 
