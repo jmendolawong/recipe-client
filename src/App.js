@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Route, Switch, Link } from 'react-router-dom'
+import config from './config'
 
 import HomePage from './routes/HomePage'
-import ExplorePage from './routes/ExplorePage'
 import FavoritesList from './routes/FavoritesPage'
 import Recipe from './routes/RecipePage'
+import AddRecipe from './routes/AddRecipe'
 import NotFound from './routes/NotFoundPage'
 
 import NavBar from './components/NavBar'
@@ -17,12 +18,13 @@ export default class App extends Component {
     super(props);
     this.state = {
       recipes: [],
+      search: '',
       error: null,
     }
   }
 
   handleDeleteRecipe = recipeId => {
-    const newRecipes = this.state.notes.filter(recipe =>
+    const newRecipes = this.state.recipes.filter(recipe =>
       recipe.id !== recipeId
     )
     this.setState({ recipes: newRecipes })
@@ -35,14 +37,30 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      recipes: this.props.recipes
-    });
+
+    fetch(`${config.API_ENDPOINT}/catalog`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(err => Promise.reject(err))
+          : res.json()
+      )
+      .then(recipes => {
+        this.setState({ recipes })
+      })
+      .catch(error => {
+        console.log({ error })
+      })
   }
 
   render() {
     const contextValue = {
       recipes: this.state.recipes,
+      search: this.state.search,
       deleteRecipe: this.handleDeleteRecipe,
       addRecipe: this.handleAddRecipe,
     }
@@ -57,9 +75,9 @@ export default class App extends Component {
 
           <header role="banner">
             <Link to='/'>
-              <h1>Recipe Sous-chef</h1>
+              <h1>Recipe Catalog</h1>
             </Link>
-            <h2>Catalog your favorite recipes</h2>
+            <h2>Bookmark your favorite recipes</h2>
           </header>
 
           <main className='main_section'>
@@ -68,14 +86,14 @@ export default class App extends Component {
                 exact path='/'
                 component={HomePage} />
               <Route
-                path='/explore'
-                component={ExplorePage} />
-              <Route
-                exact path='/favorites'
+                exact path='/catalog'
                 component={FavoritesList} />
               <Route
-                path='/favorites/:id'
+                path='/catalog/:id'
                 component={Recipe} />
+              <Route
+                path='/addRecipe'
+                component={AddRecipe} />
               <Route component={NotFound} />
             </Switch>
 

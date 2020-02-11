@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Note from '../components/Note'
+// import Note from '../components/Note'
 // import Ingredient from '../components/Ingredient'
 // import Instruction from '../components/Instruction'
 import RecipeContext from '../RecipeContext'
-import './RecipePage.css'
 import { deleteRecipe } from '../recipeHelper'
+import './RecipePage.css'
+
 
 // import store from '../STORE';
 
@@ -14,8 +15,6 @@ function findRecipe(recipes = [], recipeId) {
   return recipe
 }
 
-// Possibly need to take out the notes. 
-// Might be unnecessary and could just store the recipes from the API in the database
 
 export default class Recipe extends Component {
   static contextType = RecipeContext
@@ -25,22 +24,6 @@ export default class Recipe extends Component {
     const recipeId = this.props.match.params.id
     const thisRecipe = findRecipe(recipes, recipeId)
 
-    const ingredients = thisRecipe.ingredients
-      .map((ingredient, key) =>
-        <li key={key}>
-          {ingredient}
-        </li>
-        // <Ingredient ingredient={ingredient} key={key} />
-      )
-
-    const instructions = thisRecipe.instructions
-      .map((step, key) =>
-        <li key={key}>
-          {step}
-        </li>
-        // <Instruction instruction={step} key={key} />
-      )
-
     return (
       <div className='Recipe'>
         <Link to={`/favorites/${thisRecipe.id}`}>
@@ -48,23 +31,18 @@ export default class Recipe extends Component {
             {thisRecipe.name}
           </h1>
         </ Link>
-        <div className='ingredients'>
-          <h2>Ingredients</h2>
+        <div className='why'>
+          <h2>Why I love this recipe</h2>
           <ul>
-            {ingredients}
+            {thisRecipe.why}
           </ul>
         </div>
-        <div className="instructions">
-          <h2>Instructions</h2>
+        <div className="url">
+          <h2>Link to the Recipe</h2>
           <ol>
-            {instructions}
+            {thisRecipe.url}
           </ol>
         </div>
-        <div className="notes">
-          <h2>Notes</h2>
-          <Note />
-        </div>
-        <button type="submit">Save</button>
         <button
           className='deleteRecipe'
           onClick={() => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import FavoriteItem from '../components/FavoriteItem'
 import RecipeContext from '../RecipeContext'
 
@@ -18,6 +19,9 @@ export default class FavoritesList extends Component {
             <FavoriteItem {...recipe} key={recipe.id} />
           )}
         </ul>
+        <Link to={'/addRecipe'}>
+          <button className='add'>Add a new favorite</button>
+        </Link>
       </div>
     );
   }

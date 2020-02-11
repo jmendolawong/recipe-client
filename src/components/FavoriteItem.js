@@ -14,7 +14,7 @@ export default class FavoriteItem extends Component {
     return (
       <div className='favoriteItem'>
         <li key={this.props.id}>
-          <Link to={`/favorites/${this.props.id}`}>
+          <Link to={`/catalog/${this.props.id}`}>
             <h2>{this.props.name}</h2>
           </Link>
           <button
