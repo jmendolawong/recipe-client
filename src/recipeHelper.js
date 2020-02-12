@@ -28,11 +28,12 @@ export const addRecipe = (callback, name, note, url) => {
     body: JSON.stringify({ name: name, note: note, url: url })
   })
     .then(res => {
-      (!res.ok)
-        ? res.json().then(err => Promise.reject(err))
-        : res.json()
+      if (!res.ok) {
+        return res.json().then(err => Promise.reject(err))
+      } return res.json()
     })
     .then(data => {
+      console.log(data)
       callback(data)
     })
 
