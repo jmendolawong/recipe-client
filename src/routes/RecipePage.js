@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import Note from '../components/Note'
-// import Ingredient from '../components/Ingredient'
-// import Instruction from '../components/Instruction'
+
 import RecipeContext from '../RecipeContext'
 import { deleteRecipe } from '../recipeHelper'
 import './RecipePage.css'
 
 
-// import store from '../STORE';
 
 function findRecipe(recipes = [], recipeId) {
   const recipe = recipes.find(recipe => recipe.id === parseInt(recipeId))
@@ -46,7 +43,8 @@ export default class Recipe extends Component {
         <button
           className='deleteRecipe'
           onClick={() => {
-            deleteRecipe(this.props.id, this.context.deleteRecipe)
+            deleteRecipe(thisRecipe.id, this.context.deleteRecipe)
+            this.props.history.push(`/catalog`);
           }}>
           Delete Recipe
         </button>
