@@ -6,11 +6,11 @@ import { deleteRecipe } from '../recipeHelper'
 import './RecipePage.css'
 
 
-
 function findRecipe(recipes = [], recipeId) {
   const recipe = recipes.find(recipe => recipe.id === parseInt(recipeId))
   return recipe
 }
+
 
 
 export default class Recipe extends Component {

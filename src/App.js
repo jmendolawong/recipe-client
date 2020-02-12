@@ -44,11 +44,11 @@ export default class App extends Component {
         'content-type': 'application/json'
       }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(err => Promise.reject(err))
-          : res.json()
-      )
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(err => Promise.reject(err))
+        } return res.json()
+      })
       .then(recipes => {
         this.setState({ recipes })
       })
