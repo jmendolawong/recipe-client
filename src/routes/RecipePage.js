@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 
 import RecipeContext from '../RecipeContext'
 import { deleteRecipe } from '../recipeHelper'
@@ -23,15 +22,13 @@ export default class Recipe extends Component {
 
     return (
       <div className='Recipe'>
-        <Link to={`/favorites/${thisRecipe.id}`}>
           <h1>
             {thisRecipe.name}
           </h1>
-        </ Link>
         <div className='why'>
           <h2>Why I love this recipe</h2>
           <ul>
-            {thisRecipe.why}
+            {thisRecipe.note}
           </ul>
         </div>
         <div className="url">
@@ -40,6 +37,13 @@ export default class Recipe extends Component {
             {thisRecipe.url}
           </ol>
         </div>
+        <button
+          className='backButton'
+          onClick={() => {
+            this.props.history.push('/catalog')
+          }}>
+            Back to the catalog
+          </button>
         <button
           className='deleteRecipe'
           onClick={() => {
