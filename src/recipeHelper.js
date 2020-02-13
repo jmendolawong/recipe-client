@@ -37,5 +37,4 @@ export const addRecipe = (callback, name, note, url) => {
       callback(data)
     })
 
-  // callback = this.context.addRecipe
 }
