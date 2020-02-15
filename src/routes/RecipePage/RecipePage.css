@@ -1,0 +1,28 @@
+div.recipe {
+  padding: 5px;
+  margin: 0 5px 5px;
+}
+
+p {
+  margin: 5px;
+  padding: 5px;
+}
+
+.btn {
+  margin: 15px;
+}
+
+div.why {
+  padding: 10px;
+}
+
+
+
+div.recipe > h1, div.why > h2 {
+  padding: 5px;
+}
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+}

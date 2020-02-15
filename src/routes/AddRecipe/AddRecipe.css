@@ -1,0 +1,35 @@
+.add-recipe-form {
+  padding: 10px;
+  margin: 5px;
+}
+
+label {
+  padding: 2px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+input {
+  border: thin solid black;
+  width: 80%;
+  max-width: 500px;
+  padding: 5px;
+  margin: 5px;
+}
+
+label {
+  display: block;
+} 
+
+textarea#why {
+  border: thin solid black;
+  padding: 5px;
+  margin: 5px;
+  width: 80%;
+  max-width: 500px;
+  height: 100px;
+}
+
+h2 {
+  margin-top: 0;
+}

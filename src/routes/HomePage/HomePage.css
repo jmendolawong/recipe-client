@@ -1,0 +1,45 @@
+
+header {
+  padding: 15px ;
+}
+
+.description {
+  min-height: 200px;
+  padding: 30px 15px 0;
+}
+
+div.registration {
+}
+
+.why {
+  margin: 25px 5px;
+}
+
+.why > h3 {
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 650px;
+}
+
+.future-features {
+  margin: 25px 5px;
+}
+
+.future-features > h3 {
+  padding: 10px;
+}
+
+.registration {
+  min-height: 200px;
+  margin: 20px 5px;
+}
+
+.registration > h2 {
+  padding: 5px;
+}

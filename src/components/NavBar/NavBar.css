@@ -1,0 +1,33 @@
+.nav-links {
+  position: fixed;
+  padding: 2px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  min-height: 50px;
+
+}
+
+.nav-links a {
+  margin: 1vh 15px;
+  text-decoration: none;
+  top: 50%;
+}
+
+.nav-links a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+.nav-links a:link {
+  color: black;
+}
+
+.nav-links a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

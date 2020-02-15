@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
+import './fonts/NotoSansHK-Regular.otf'
+import './fonts/Cabin-Regular.ttf'
 
 import App from './App';
 import store from './STORE'

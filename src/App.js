@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import config from './config'
 
-import HomePage from './routes/HomePage'
-import FavoritesList from './routes/FavoritesPage'
-import Recipe from './routes/RecipePage'
-import AddRecipe from './routes/AddRecipe'
-import NotFound from './routes/NotFoundPage'
+import HomePage from './routes/HomePage/HomePage'
+import FavoritesList from './routes/FavoritesPage/FavoritesPage'
+import Recipe from './routes/RecipePage/RecipePage'
+import AddRecipe from './routes/AddRecipe/AddRecipe'
+import NotFound from './routes/NotFoundPage/NotFoundPage'
 
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import RecipeContext from './RecipeContext'
 
 import './App.css'
@@ -73,11 +73,12 @@ export default class App extends Component {
             <NavBar />
           </nav>
 
-          <header role="banner">
-            <Link to='/'>
-              <h1>Recipe Catalog</h1>
-            </Link>
-            <h2>Bookmark your favorite recipes</h2>
+          <header className='title-container' role="banner">
+            <div className='background'></div>
+              <div className='titles'>
+                <h1>Recipe Catalog</h1>
+                <h2>Bookmark your favorite recipes</h2>
+              </div>
           </header>
 
           <main className='main_section'>
@@ -98,7 +99,11 @@ export default class App extends Component {
             </Switch>
 
           </main>
-          <footer className='footer'>Footer Placeholder</footer>
+          <footer className='footer'>
+            <p className='footer-author'>Created by Justin Mendola-Wong</p>
+            <div className='social-media'></div>
+            <p className='rights-reserved'>Copyright © 2020<br />All rights reserved</p>
+            </footer>
         </div>
       </RecipeContext.Provider>
     );

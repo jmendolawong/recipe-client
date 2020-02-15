@@ -1,0 +1,25 @@
+.registration-form {
+  background-color: #f5f2d0;
+}
+
+.signup-form {
+  padding: 5px;
+  margin: 5px;
+}
+
+
+.inputs {
+  padding: 5px;
+}
+
+button {
+  border: black 1px solid;
+  border-radius: 10px;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+}
