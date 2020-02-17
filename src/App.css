@@ -5,7 +5,7 @@
 body {
   font-family: NotoSansHK;
   font-size: 20px;
-  color: #444;
+  color: black;
   text-align: center;
   line-height: 1.5;
 }
@@ -14,13 +14,20 @@ body {
   height: 100vh;
   padding-bottom: 20px;
   margin: 0 auto;
-  background-color: #f5f2d0;
 }
 
-.navbar,
-.footer {
-  padding: 1% 0;
+.navbar {
   background: rgba(255, 255, 255, 0.7);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  border-top: 2px solid #FFFAF6;
+  min-height: 50px;
 }
 
 .navbar {
@@ -34,15 +41,15 @@ body {
   min-height: 50px;
 }
 
-.title-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./images/bg.jpg');
+.full-page {
+  background: url('./images/bg.jpg') no-repeat center center fixed;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   height: 100vh;
- 
+  overflow-y: scroll;
 }
 
 .titles {
@@ -52,12 +59,12 @@ body {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border: #f8f8ff 5px solid;
+  border: #FFFAF6 5px solid;
   border-radius: 10px;
 }
 
 .titles > h1, .titles > h2 {
-  color: white;
+  color: #FFFAF6;
 }
 
 h1 {
@@ -72,12 +79,12 @@ h1, h2 {
 
 
 a:visited {
-  color: #444;
+  color: black;
   text-decoration: none;
 }
 
 a:link {
-  color: #444;
+  color: black;
 }
 
 a:hover {
@@ -89,7 +96,8 @@ a:hover {
   height: 40px;
   margin: 10px;
   font-weight: bold;
-  border: 2px #444 solid;
+  background-color: #FF7100;
+  border: 2px #FF7100 solid;
   border-radius: 5px;
   transition-property: top;
   transition-duration: 2s;
@@ -101,9 +109,10 @@ a:hover {
   top: -4px;
 }
 
-main {
-  background-color: #f5f2d0;
+button {
+  color: #FFFAF6;
 }
+
 
 .rights-reserved {
   font-size: 12px;

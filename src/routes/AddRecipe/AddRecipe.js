@@ -21,29 +21,31 @@ export default class AddRecipe extends Component {
   render() {
 
     return (
-      <div className='addRecipe'>
-        <form className='addNewRecipe' onSubmit={e => this.handleSubmit(e)}>
-          <h2>Add a new favorite!</h2>
-          <div className='add-recipe-form'>
-            <div className='form-group name-input'>
-              <label htmlFor='name'>Recipe name</label>
-              <input type='text' name='name' id='name' required />
-            </div>
-            <div className='form-group url-input'>
-              <label htmlFor='url'>Recipe URL</label>
-              <input name='url' id='url'></input>
-            </div>
-            <div className='form-group why-input'>
-              <label htmlFor='why'>Notes/why I love this recipe</label>
-              <textarea name='why' id='why' />
-            </div>
-            <button className='btn' onClick={e => this.props.history.push('/catalog')}>
-              Cancel
+      <div className='addRecipe-container'>
+        <div className='addRecipe-content'>
+          <form className='addNewRecipe' onSubmit={e => this.handleSubmit(e)}>
+            <h2>Add a new favorite!</h2>
+            <div className='add-recipe-form'>
+              <div className='form-group name-input'>
+                <label htmlFor='name'>Recipe name</label>
+                <input type='text' name='name' id='name' required />
+              </div>
+              <div className='form-group url-input'>
+                <label htmlFor='url'>Recipe URL</label>
+                <input name='url' id='url'></input>
+              </div>
+              <div className='form-group why-input'>
+                <label htmlFor='why'>Notes/why I love this recipe</label>
+                <textarea name='why' id='why' />
+              </div>
+              <button className='btn' onClick={e => this.props.history.push('/catalog')}>
+                Cancel
         </button>
-            {' '}
-            <button type='submit' className='noteBtn btn'>Save</button>
-          </div>
-        </form>
+              {' '}
+              <button type='submit' className='noteBtn btn'>Save</button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

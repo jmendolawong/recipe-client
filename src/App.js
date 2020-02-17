@@ -3,8 +3,10 @@ import { Route, Switch } from 'react-router-dom'
 import config from './config'
 
 import HomePage from './routes/HomePage/HomePage'
+import AboutPage from './routes/AboutPage/AboutPage'
 import FavoritesList from './routes/FavoritesPage/FavoritesPage'
 import Recipe from './routes/RecipePage/RecipePage'
+import RegisterPage from './routes/RegisterPage/RegisterPage'
 import AddRecipe from './routes/AddRecipe/AddRecipe'
 import NotFound from './routes/NotFoundPage/NotFoundPage'
 
@@ -72,38 +74,32 @@ export default class App extends Component {
           <nav className='navbar'>
             <NavBar />
           </nav>
+          <div className='full-page'>
+            <main className='main-section'>
+              <Switch>
+                <Route
+                  exact path='/'
+                  component={HomePage} />
+                <Route
+                  path='/about'
+                  component={AboutPage} />
+                <Route
+                  path='/register'
+                  component={RegisterPage} />
+                <Route
+                  exact path='/catalog'
+                  component={FavoritesList} />
+                <Route
+                  path='/catalog/:id'
+                  component={Recipe} />
+                <Route
+                  path='/addRecipe'
+                  component={AddRecipe} />
+                <Route component={NotFound} />
+              </Switch>
 
-          <header className='title-container' role="banner">
-            <div className='background'></div>
-              <div className='titles'>
-                <h1>Recipe Catalog</h1>
-                <h2>Bookmark your favorite recipes</h2>
-              </div>
-          </header>
-
-          <main className='main_section'>
-            <Switch>
-              <Route
-                exact path='/'
-                component={HomePage} />
-              <Route
-                exact path='/catalog'
-                component={FavoritesList} />
-              <Route
-                path='/catalog/:id'
-                component={Recipe} />
-              <Route
-                path='/addRecipe'
-                component={AddRecipe} />
-              <Route component={NotFound} />
-            </Switch>
-
-          </main>
-          <footer className='footer'>
-            <p className='footer-author'>Created by Justin Mendola-Wong</p>
-            <div className='social-media'></div>
-            <p className='rights-reserved'>Copyright © 2020<br />All rights reserved</p>
-            </footer>
+            </main>
+          </div>
         </div>
       </RecipeContext.Provider>
     );

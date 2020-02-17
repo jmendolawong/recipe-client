@@ -10,8 +10,14 @@ export default class NavBar extends Component {
         <Link to='/'>
           Home
         </Link>
+        <Link to='/about'>
+          About
+        </Link>
+        <Link to='/register'>
+          Register
+        </Link>
         <Link to='/catalog'>
-          Catalog demo
+          Demo
         </Link>
       </div>
     );

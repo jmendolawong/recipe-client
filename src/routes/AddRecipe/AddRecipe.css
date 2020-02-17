@@ -1,3 +1,25 @@
+div.addRecipe-container {
+  position: relative;
+  height: 90vh;
+  padding: 5px;
+  margin: 50px auto 5px;
+  text-align: center;
+}
+
+div.addRecipe-content {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(185, 182, 182, 0.8);
+}
+
+.addNewRecipe > h2 {
+  margin: 0;
+}
+
 .add-recipe-form {
   padding: 10px;
   margin: 5px;
@@ -32,4 +54,11 @@ textarea#why {
 
 h2 {
   margin-top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+  div.addRecipe-content {
+    width: 50%;
+  }
 }

@@ -21,34 +21,36 @@ export default class Recipe extends Component {
     const thisRecipe = findRecipe(recipes, recipeId)
 
     return (
-      <div className='recipe'>
+      <div className='recipe-container'>
+        <div className='recipe-content'>
           <h1>
             <a href={thisRecipe.url} target="_blank" rel="noopener noreferrer">
-            {thisRecipe.name}
+              {thisRecipe.name}
             </a>
           </h1>
-        <div className='why'>
-          <h2>Why I love this recipe</h2>
-          <p>
-            {thisRecipe.note}
-          </p>
-        </div>
-        <button
-          className='btn backBtn'
-          onClick={() => {
-            this.props.history.push('/catalog')
-          }}>
+          <div className='why'>
+            <h2>Why I love this recipe</h2>
+            <p>
+              {thisRecipe.note}
+            </p>
+          </div>
+          <button
+            className='btn backBtn'
+            onClick={() => {
+              this.props.history.push('/catalog')
+            }}>
             Back to the catalog
         </button>
-        <button
-          className='btn deleteBtn'
-          onClick={() => {
-            deleteRecipe(thisRecipe.id, this.context.deleteRecipe)
-            this.props.history.push(`/catalog`);
-          }}>
-          Delete Recipe
+          <button
+            className='btn deleteBtn'
+            onClick={() => {
+              deleteRecipe(thisRecipe.id, this.context.deleteRecipe)
+              this.props.history.push(`/catalog`);
+            }}>
+            Delete Recipe
         </button>
-      </div >
+        </div >
+      </div>
     );
   }
 }

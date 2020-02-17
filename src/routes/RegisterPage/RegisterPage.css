@@ -1,4 +1,4 @@
-div.recipe-container {
+div.registration-container {
   position: relative;
   height: 80vh;
   padding: 5px;
@@ -6,7 +6,8 @@ div.recipe-container {
   text-align: center;
 }
 
-div.recipe-content {
+
+div.registration-content {
   position: absolute;
   width: 80%;
   top: 50%;
@@ -17,36 +18,30 @@ div.recipe-content {
 }
 
 
-p {
+.signup-form {
+  padding: 5px;
   margin: 5px;
+}
+
+.inputs {
   padding: 5px;
 }
 
-.btn {
-  margin: 15px;
+button {
+  border: FFFAF6 1px solid;
+  border-radius: 10px;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
 }
 
-div.why {
-  margin-top: 0;
-  padding: 10px;
-}
-
-div.recipe > h1, div.why > h2 {
-  padding: 5px;
-}
-
-p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-a {
-  color: #FFFAF6;
+button:hover {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
 
-  div.recipe-content {
+  div.registration-content {
     width: 50%;
   }
 }
