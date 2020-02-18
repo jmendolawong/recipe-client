@@ -15,7 +15,7 @@ li {
   width: 250px;
   position: relative;
   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-  background: rgba(185, 182, 182, 0.8);}
+  background: rgba(185, 182, 182, 0.9);}
 
 li:hover {
   border-radius: 20%;

@@ -1,6 +1,6 @@
 .title-container {
   position: relative;
-  height: 80vh;
+  height: 100vh;
 
 }
 
@@ -20,7 +20,7 @@
   color: FFFAF6;
 }
 
-h1 {
+.titles h1 {
   font-family: 'Cabin';
   font-size: 50px;
 }
@@ -30,3 +30,60 @@ h1, h2 {
   margin: 10px;
 }
 
+description {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+div.description-container {
+  position: relative;
+  height: 80vh;
+  padding: 5px;
+  margin: 10px auto 30px;
+  text-align: center;
+}
+
+div.description-content {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(185, 182, 182, 0.9);
+}
+
+.description {
+  min-height: 200px;
+  padding: 30px 15px 0;
+}
+
+.why {
+  margin: 25px 5px;
+}
+
+.why h3 {
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 650px;
+}
+
+.future-features {
+  margin: 25px 5px;
+}
+
+.future-features h3 {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  div.description-content {
+    width: 50%;
+  }
+}

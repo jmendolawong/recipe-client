@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom'
 import config from './config'
 
 import HomePage from './routes/HomePage/HomePage'
-import AboutPage from './routes/AboutPage/AboutPage'
 import FavoritesList from './routes/FavoritesPage/FavoritesPage'
 import Recipe from './routes/RecipePage/RecipePage'
 import RegisterPage from './routes/RegisterPage/RegisterPage'
@@ -81,9 +80,6 @@ export default class App extends Component {
                   exact path='/'
                   component={HomePage} />
                 <Route
-                  path='/about'
-                  component={AboutPage} />
-                <Route
                   path='/register'
                   component={RegisterPage} />
                 <Route
@@ -97,7 +93,6 @@ export default class App extends Component {
                   component={AddRecipe} />
                 <Route component={NotFound} />
               </Switch>
-
             </main>
           </div>
         </div>
