@@ -14,6 +14,8 @@ div.recipe-content {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background: rgba(185, 182, 182, 0.9);
+  border: #FFFAF6 5px solid;
+  border-radius: 10px;
 }
 
 

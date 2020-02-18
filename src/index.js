@@ -7,12 +7,11 @@ import './fonts/NotoSansHK-Regular.otf'
 import './fonts/Cabin-Regular.ttf'
 
 import App from './App';
-import store from './STORE'
 
 
 ReactDOM.render(
   <BrowserRouter>
-    <App recipes={store} />
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 );

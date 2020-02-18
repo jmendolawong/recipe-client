@@ -11,13 +11,13 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  border: rgba(185, 182, 182, 0.8) 5px solid;
+  border: #FFFAF6 5px solid;
   border-radius: 10px;
   background: rgba(185, 182, 182, 0.8);
 }
 
 .titles > h1, .titles > h2 {
-  color: FFFAF6;
+  color: #FFFAF6;
 }
 
 .titles h1 {
@@ -50,6 +50,8 @@ div.description-content {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background: rgba(185, 182, 182, 0.9);
+  border: #FFFAF6 5px solid;
+  border-radius: 10px;
 }
 
 .description {
