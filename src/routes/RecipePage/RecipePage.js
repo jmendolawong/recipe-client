@@ -10,8 +10,6 @@ function findRecipe(recipes = [], recipeId) {
   return recipe
 }
 
-
-
 export default class Recipe extends Component {
   static contextType = RecipeContext
 

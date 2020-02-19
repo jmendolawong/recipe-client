@@ -1,6 +1,6 @@
 div.addRecipe-container {
   position: relative;
-  height: 90vh;
+  height: 80vh;
   padding: 5px;
   margin: 60px auto 5px;
   text-align: center;
@@ -19,13 +19,8 @@ div.addRecipe-content {
   border-radius: 10px;
 }
 
-.addNewRecipe > h2 {
+.addRecipe-content h2 {
   margin: 0;
-}
-
-.add-recipe-form {
-  padding: 10px;
-  margin: 5px;
 }
 
 label {

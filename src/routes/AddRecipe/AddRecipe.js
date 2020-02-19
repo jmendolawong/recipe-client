@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import RecipeContext from '../../RecipeContext'
-// import PropTypes from 'prop-types'
-import { addRecipe } from '../../recipeHelper'
 
+import RecipeContext from '../../RecipeContext'
+import { addRecipe } from '../../recipeHelper'
 import './AddRecipe.css'
 
 
@@ -23,9 +22,9 @@ export default class AddRecipe extends Component {
     return (
       <div className='addRecipe-container'>
         <div className='addRecipe-content'>
-          <form className='addNewRecipe' onSubmit={e => this.handleSubmit(e)}>
-            <h2>Add a new favorite!</h2>
-            <div className='add-recipe-form'>
+          <h2>Add a new favorite!</h2>
+          <div className='recipe-form'>
+            <form className='addNewRecipe' onSubmit={e => this.handleSubmit(e)}>
               <div className='form-group name-input'>
                 <label htmlFor='name'>Recipe name</label>
                 <input type='text' name='name' id='name' required />
@@ -40,11 +39,11 @@ export default class AddRecipe extends Component {
               </div>
               <button className='btn' onClick={e => this.props.history.push('/catalog')}>
                 Cancel
-        </button>
+                </button>
               {' '}
               <button type='submit' className='noteBtn btn'>Save</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );
