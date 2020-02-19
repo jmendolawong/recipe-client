@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import './RegisterPage.css'
 
 export default class RegisterPage extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      formSubmitted: false,
+    }
+  }
 
   handleSubmit = event => {
     event.preventDefault()
-    console.log('Registration submitted')
+    this.setState({ formSubmitted: true })
   }
 
   render() {
@@ -17,22 +22,29 @@ export default class RegisterPage extends Component {
         <div className='registration-content'>
 
           <h2>Registration</h2>
-          <p>Recipe Catalog is currently in beta.{"\n"}Sign up below and we'll notify you when we publicly release</p>
-
+          {this.state.formSubmitted ?
+            <p></p>
+            :
+            <p>Recipe Catalog is currently in beta.<br />Sign up below and we'll notify you when we publicly release</p>
+          }
           <div className='registration-form'>
-            <form
-              className="signup-form"
-              onSubmit={this.handleSubmit}>
-              <div className='inputs'>
-                <label htmlFor="username">Email </label>
-                <input type="text" name="username" id="username" />
+            {this.state.formSubmitted ?
+              <div className='signup-form'>
+                <p>Thank you for signing up. We will notify you when your account is ready.</p>
               </div>
-              <div className='inputs'>
-                <label htmlFor="password">Password </label>
-                <input type="password" name="password" id="password" />
-              </div>
-              <button className='btn' type="submit">Satisfy my tastebuds</button>
-            </form>
+              :
+              <form
+                className="signup-form"
+                onSubmit={this.handleSubmit}>
+                <div className='inputs'>
+                  <label htmlFor="username">Email </label>
+                  <input
+                    type="email" name="username" id="username"
+                    placeholder='Your email' required />
+                </div>
+                <button className='btn' type="submit">Satisfy my tastebuds</button>
+              </form>
+            }
           </div>
         </div>
       </div>
