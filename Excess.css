@@ -1,0 +1,122 @@
+
+
+
+
+.title-container {
+  position: relative;
+  height: 100vh;
+
+}
+
+.titles {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: #FFFAF6 5px solid;
+  border-radius: 10px;
+  background: rgba(185, 182, 182, 0.8);
+}
+
+.titles > h1, .titles > h2 {
+  color: #FFFAF6;
+}
+
+.titles h1 {
+  font-family: 'Cabin';
+  font-size: 50px;
+}
+
+h1, h2 {
+  padding: 15px;
+  margin: 10px;
+}
+
+description {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+div.description-container {
+  position: relative;
+  height: 80vh;
+  padding: 5px;
+  margin: 10px auto 30px;
+  text-align: center;
+}
+
+div.description-content {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(185, 182, 182, 0.9);
+  border: #FFFAF6 5px solid;
+  border-radius: 10px;
+}
+
+.description {
+  min-height: 200px;
+  padding: 30px 15px 0;
+}
+
+.why {
+  margin: 25px 5px;
+}
+
+.why h3 {
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  max-width: 650px;
+}
+
+.future-features {
+  margin: 25px 5px;
+}
+
+.future-features h3 {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  div.description-content {
+    width: 50%;
+  }
+}
+
+--------------------------------------------
+
+Favoritespage
+
+div.favoritesList {
+  width: 95vw;
+  padding: 10px;
+  margin: 0 auto 10px;
+}
+
+ul.favorites_list {
+  width: 80%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+ul, ol {
+  list-style: none;
+ }
+
+ --------------------------------------------
+

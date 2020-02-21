@@ -15,15 +15,18 @@ export default class FavoriteItem extends Component {
       <div className='favoriteItem'>
         <li key={this.props.id}>
           <div className='list-content'>
+            <i className='fas fa-chevron-right'></i>
             <Link to={`/catalog/${this.props.id}`}>
-              <h3 className='item-names'>{this.props.name}</h3>
+              <h3 className='item-names'>
+                {this.props.name}
+              </h3>
             </Link>
             <button
               className='deleteRecipe btn'
               onClick={() => {
                 deleteRecipe(this.props.id, this.context.deleteRecipe)
               }}>
-              Delete Recipe
+              Delete
             </button>
           </div>
         </li>

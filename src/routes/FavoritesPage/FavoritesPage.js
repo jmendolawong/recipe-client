@@ -20,7 +20,7 @@ export default class FavoritesList extends Component {
           )}
         </ul>
         <Link to={'/addRecipe'}>
-          <button className='add btn'>Add a new favorite</button>
+          <button className='add btn'>Add favorite</button>
         </Link>
       </div>
     );

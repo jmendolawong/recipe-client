@@ -10,7 +10,6 @@
   flex-direction: row;
   justify-content: flex-end;
   min-height: 50px;
-
 }
 
 .nav-links a {
@@ -34,13 +33,13 @@
   text-decoration: underline;
 }
 
-@media only screen and (mind-width: 420px){
+@media only screen and (min-width: 420px){
   .nav-links{
     font-size: 20px;
   }
 }
 
-@media only screen and (mind-width: 768px){
+@media only screen and (min-width: 768px){
   .nav-links {
     font-size: 20px;
   }

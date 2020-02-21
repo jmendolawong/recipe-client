@@ -4,7 +4,6 @@ import RecipeContext from '../../RecipeContext'
 import { deleteRecipe } from '../../recipeHelper'
 import './RecipePage.css'
 
-
 function findRecipe(recipes = [], recipeId) {
   const recipe = recipes.find(recipe => recipe.id === parseInt(recipeId))
   return recipe
@@ -25,6 +24,7 @@ export default class Recipe extends Component {
             <a href={thisRecipe.url} target="_blank" rel="noopener noreferrer">
               {thisRecipe.name}
             </a>
+            <span className='fas fa-chevron-right'></span>
           </h1>
           <div className='why'>
             <h2>Why I love this recipe</h2>
@@ -37,7 +37,7 @@ export default class Recipe extends Component {
             onClick={() => {
               this.props.history.push('/catalog')
             }}>
-            Back to the catalog
+            Back
         </button>
           <button
             className='btn deleteBtn'
@@ -45,7 +45,7 @@ export default class Recipe extends Component {
               deleteRecipe(thisRecipe.id, this.context.deleteRecipe)
               this.props.history.push(`/catalog`);
             }}>
-            Delete Recipe
+            Delete
         </button>
         </div >
       </div>

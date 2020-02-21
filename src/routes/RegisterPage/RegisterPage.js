@@ -21,16 +21,16 @@ export default class RegisterPage extends Component {
       <div className='registration-container'>
         <div className='registration-content'>
 
-          <h2>Registration</h2>
+          <h2>Sign Up</h2>
           {this.state.formSubmitted ?
             <p></p>
             :
-            <p>Recipe Catalog is currently in beta.<br />Sign up below and we'll notify you when we publicly release</p>
+            <p>Recipe Catalog is rolling out new features in the near future.<br />Sign up below and we'll notify you these are released</p>
           }
           <div className='registration-form'>
             {this.state.formSubmitted ?
               <div className='signup-form'>
-                <p>Thank you for signing up. We will notify you when your account is ready.</p>
+                <p>Thank you for signing up. We will notify you when new features are rolled out.</p>
               </div>
               :
               <form
@@ -42,7 +42,7 @@ export default class RegisterPage extends Component {
                     type="email" name="username" id="username"
                     placeholder='Your email' required />
                 </div>
-                <button className='btn' type="submit">Satisfy my tastebuds</button>
+                <button className='btn' type="submit">Submit</button>
               </form>
             }
           </div>

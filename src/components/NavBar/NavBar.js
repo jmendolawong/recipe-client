@@ -11,10 +11,10 @@ export default class NavBar extends Component {
           Home
         </Link>
         <Link to='/register'>
-          Register
+          Sign Up
         </Link>
         <Link to='/catalog'>
-          Demo
+          Catalog
         </Link>
       </div>
     );

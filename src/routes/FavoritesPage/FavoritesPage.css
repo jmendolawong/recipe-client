@@ -1,14 +1,11 @@
 div.favoritesList {
-  width: 95vw;
-  padding: 10px;
-  margin: 0 auto 10px;
+  margin-bottom: 20px;
 }
 
 ul.favorites_list {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px;
+  margin: 50px auto 20px;
+  padding: 0;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -16,4 +13,10 @@ ul.favorites_list {
 
 ul, ol {
   list-style: none;
- }
+}
+
+button.add.btn {
+  width: 130px;
+  height: 60px;
+  font-size: 18px;  
+}

@@ -18,14 +18,21 @@ div.registration-content {
   border-radius: 10px;
 }
 
-
 .signup-form {
   padding: 5px;
   margin: 5px;
 }
 
+div.registration-content h2 {
+  margin-top: 10px;
+}
+
 .inputs {
   padding: 5px;
+}
+
+inputs i {
+  position: absolute;
 }
 
 button {

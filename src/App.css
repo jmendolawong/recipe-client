@@ -55,7 +55,7 @@ a:hover {
 
 .btn {
   height: 40px;
-  margin: 10px;
+  width: 70px;
   font-weight: bold;
   background-color: #FF7100;
   border: 2px #FF7100 solid;
@@ -72,9 +72,4 @@ a:hover {
 
 button {
   color: #FFFAF6;
-}
-
-
-.rights-reserved {
-  font-size: 12px;
 }
