@@ -5,7 +5,6 @@ import config from './config'
 import HomePage from './routes/HomePage/HomePage'
 import FavoritesList from './routes/FavoritesPage/FavoritesPage'
 import Recipe from './routes/RecipePage/RecipePage'
-import RegisterPage from './routes/RegisterPage/RegisterPage'
 import AddRecipe from './routes/AddRecipe/AddRecipe'
 import NotFound from './routes/NotFoundPage/NotFoundPage'
 
@@ -79,9 +78,6 @@ export default class App extends Component {
                 <Route
                   exact path='/'
                   component={HomePage} />
-                <Route
-                  path='/register'
-                  component={RegisterPage} />
                 <Route
                   exact path='/catalog'
                   component={FavoritesList} />

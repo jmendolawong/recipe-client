@@ -10,9 +10,6 @@ export default class NavBar extends Component {
         <Link to='/'>
           Home
         </Link>
-        <Link to='/register'>
-          Sign Up
-        </Link>
         <Link to='/catalog'>
           Catalog
         </Link>

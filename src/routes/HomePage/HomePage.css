@@ -12,19 +12,24 @@
   transform: translate(-50%);
   border: #FFFAF6 5px solid;
   border-radius: 10px;
-  background: rgba(185, 182, 182, 0.8);
+  background: black;
   margin-top: 25px;
   max-height: 300px;
 }
 
 .titles h1, .titles h2 {
   color: #FFFAF6;
-  margin: 10px;
+  margin: 5px;
 }
 
 .titles h1 {
-  font-family: 'Cabin';
-  font-size: 40px;
+  font-family: 'Damion';
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.titles h2 {
+  font-size: 23px;
 }
 
 div.description-content {

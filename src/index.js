@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './fonts/NotoSansHK-Regular.otf'
 import './fonts/Cabin-Regular.ttf'
+import './fonts/Damion-Regular.ttf'
 
 import App from './App';
 
