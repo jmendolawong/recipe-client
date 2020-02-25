@@ -41,7 +41,7 @@ label {
   display: block;
 } 
 
-textarea#why {
+textarea#note {
   border: thin solid black;
   padding: 5px;
   margin: 5px;

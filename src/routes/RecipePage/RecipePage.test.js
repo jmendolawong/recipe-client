@@ -1,35 +1,47 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 
 import Recipe from './RecipePage';
-import RecipeContext from '../../RecipeContext'
 
-it('Recipe component', () => {
-  const div = document.createElement('div');
+// ensure you're resetting modules before each test
+beforeEach(() => {
+  jest.resetModules();
+});
 
-  const contextValue = {
-    recipes: [
-      {
-        id: 1,
-        name: "Apple Pie",
-        note: "Apple pie is deliciousssss",
-        url: "https://www.bbcgoodfood.com/recipes/collection/apple"
-      },
-      {
-        id: 2,
-        name: "Fruit Medley",
-        note: "I love this recipe because it has peaches, oranges and grapes",
-        url: "https://www.bbcgoodfood.com/recipes/collection/apple"
-      }]
-  }
+// dummy recipe list
+const recipeContext = {
+  recipes: [
+    {
+      id: 1,
+      name: "Apple Pie",
+      note: "Apple pie is deliciousssss",
+      url: "https://www.bbcgoodfood.com/recipes/collection/apple"
+    }
+  ]
+}
 
-  ReactDOM.render(
-    < BrowserRouter >
-      <RecipeContext.Provider value={contextValue}>
-        <Recipe match={{ params: { recipeId: "1" } }} />
-      </RecipeContext.Provider>
-    </BrowserRouter >, div
-  );
-  ReactDOM.unmountComponentAtNode(div);
+
+// Takes the context data we want to test, or uses defaults
+const getRecipeWithContext = (context = recipeContext) => {
+
+  // Will then mock the RecipeContext module being used in the RecipePage component
+  jest.doMock('../../RecipeContext', () => {
+    return {
+      RecipeContext: {
+        Consumer: (props) => props.children(context)
+      }
+    }
+  });
+
+  // need to re-require after calling jest.doMock.
+  // return the updated RecipePage module that now includes the mocked context
+  return require('./RecipePage').Recipe;
+};
+
+describe('<Recipe />', () => {
+  it('should return default list of languages', () => {
+    const Recipe = getRecipeWithContext();
+    const wrapper = mount(<Recipe match={{ params: { recipeId: "1" } }} />);
+    expect(wrapper).toHaveBeenCalled();
+  });
 });
