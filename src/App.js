@@ -50,6 +50,7 @@ export default class App extends Component {
         } return res.json()
       })
       .then(recipes => {
+        window.sessionStorage.setItem('sessionRecipes', JSON.stringify(recipes))
         this.setState({ recipes })
       })
       .catch(error => {

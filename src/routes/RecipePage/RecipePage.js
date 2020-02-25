@@ -1,39 +1,17 @@
 import React, { Component } from 'react'
-import config from '../../config'
 
 import RecipeContext from '../../RecipeContext'
 import { deleteRecipe } from '../../recipeHelper'
 import './RecipePage.css'
 
 function findRecipe(recipes = [], recipeId) {
+  if (recipes.length === 0)
+    recipes = JSON.parse(window.sessionStorage.getItem('sessionRecipes'))
   const recipe = recipes.find(recipe => recipe.id === parseInt(recipeId))
   return recipe
 }
 
-
 export default class Recipe extends Component {
-
-  componentDidMount() {
-
-    fetch(`${config.API_ENDPOINT}/catalog`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(err => Promise.reject(err))
-        } return res.json()
-      })
-      .then(recipes => {
-        this.setState({ recipes })
-      })
-      .catch(error => {
-        console.log({ error })
-      })
-  }
-
 
   static contextType = RecipeContext
 

@@ -35,5 +35,4 @@ export const addRecipe = (callback, name, note, url) => {
     .then(data => {
       callback(data)
     })
-
 }
