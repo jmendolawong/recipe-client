@@ -51,7 +51,6 @@ export default class App extends Component {
       })
       .then(recipes => {
         window.sessionStorage.setItem('sessionRecipes', JSON.stringify(recipes))
-        console.log(JSON.stringify(recipes))
         this.setState({ recipes })
       })
       .catch(error => {
