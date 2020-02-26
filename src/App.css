@@ -65,7 +65,7 @@ a:hover {
   transition-timing-function: linear;
 }
 
-.btn:hover{
+.btn:hover:enabled {
   position: relative;
   top: -4px;
 }

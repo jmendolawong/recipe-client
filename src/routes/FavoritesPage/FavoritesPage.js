@@ -10,6 +10,10 @@ export default class FavoritesList extends Component {
 
   render() {
 
+    if(this.context == null) {
+      return <></>;
+    }
+
     const { recipes = [] } = this.context
 
     return (

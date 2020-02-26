@@ -1,9 +1,5 @@
 import React from 'react'
 
-const RecipeContext = React.createContext({
-  recipes: [],
-  deleteRecipe: () => {},
-  addRecipe: () => {},
-})
+const RecipeContext = React.createContext()
 
 export default RecipeContext

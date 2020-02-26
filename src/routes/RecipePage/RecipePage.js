@@ -16,9 +16,15 @@ export default class Recipe extends Component {
   static contextType = RecipeContext
 
   render() {
+    if (this.context == null) {
+      return <></>;
+    }
+
     const { recipes } = this.context
     const recipeId = this.props.match.params.id
     const thisRecipe = findRecipe(recipes, recipeId)
+
+    
 
     return (
       <div className='recipe-container'>
